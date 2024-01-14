@@ -39,7 +39,7 @@ def main():
         if ball.xcor() > 380 or ball.xcor() < -380:
             ball.bounce_x()
 
-        # Detect bricks collision
+        # TODO Detect bricks collision
 
         screen.ontimer(update_game, 100)
 
