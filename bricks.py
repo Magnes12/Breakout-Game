@@ -15,9 +15,9 @@ class Bricks(turtle.Turtle):
         brick_spacing_x = 70
         brick_spacing_y = 30
 
-        for row in range(5):
-            for col in range(5):
-                brick = Bricks(-140 + col * brick_spacing_x, 200 - row * brick_spacing_y)
+        for row in range(6):
+            for col in range(6):
+                brick = Bricks(-175 + col * brick_spacing_x, 200 - row * brick_spacing_y)
                 bricks.append(brick)
 
         return bricks

@@ -15,7 +15,7 @@ def main():
     player_paddle = Paddle()
     ball = Ball()
 
-    bricks_instance = Bricks(-140, 200)
+    bricks_instance = Bricks(-175, 200)
     bricks = bricks_instance.bricks_create()
 
     screen.listen()
@@ -39,7 +39,17 @@ def main():
         if ball.xcor() > 380 or ball.xcor() < -380:
             ball.bounce_x()
 
-        # TODO Detect bricks collision
+        bricks_to_remove = []
+        for brick in bricks:
+            if ball.distance(brick) < 25:
+                brick.goto(1000, 1000)  
+                bricks_to_remove.append(brick)
+
+        for brick in bricks_to_remove:
+            bricks.remove(brick)
+              
+        if bricks_to_remove:
+            ball.bounce_y()
 
         screen.ontimer(update_game, 100)
 
